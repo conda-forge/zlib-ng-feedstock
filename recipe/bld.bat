@@ -19,8 +19,7 @@ cmake --build . --config Release
 if errorlevel 1 exit 1
 
 ctest -C release
-if errorlevel 1 (ctest -C release --rerun-failed --output-on-failure && cmd /c exit 1)
+if errorlevel 1 exit 1
 
 cmake --build . --target install --config Release
 if errorlevel 1 exit 1
-

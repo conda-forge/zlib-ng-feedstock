@@ -10,6 +10,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING="Release" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
+      -DWITH_GTEST=OFF ^
       -DBUILD_SHARED_LIBS=1 ^
       ..
 
@@ -23,4 +24,3 @@ if errorlevel 1 exit 1
 
 cmake --build . --target install --config Release
 if errorlevel 1 exit 1
-

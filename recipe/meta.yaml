@@ -1,4 +1,4 @@
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 
 package:
   name: zlib-ng
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/{{ version }}
-  sha256: ec6a76169d4214e2e8b737e0850ba4acb806c69eeace6240ed4481b9f5c57cdf
+  sha256: fcb41dd59a3f17002aeb1bb21f04696c9b721404890bb945c5ab39d2cb69654c
   fn: zstd-ng.tar.gz
 
 build:

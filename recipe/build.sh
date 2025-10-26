@@ -6,6 +6,7 @@ cd build
 cmake \
     ${CMAKE_ARGS} \
     -DBUILD_SHARED_LIBS=1 \
+    -DZLIB_COMPAT=1 \
     ..
 
 make -j${CPU_COUNT}

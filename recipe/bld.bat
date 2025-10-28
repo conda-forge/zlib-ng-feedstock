@@ -19,7 +19,9 @@ if errorlevel 1 exit 1
 cmake --build . --config Release
 if errorlevel 1 exit 1
 
+if not "%CONDA_BUILD_SKIP_TESTS%"=="1" (
 ctest -C release
+)
 if errorlevel 1 exit 1
 
 cmake --build . --target install --config Release

@@ -1,7 +1,7 @@
 {% set version = "2.3.2" %}
 # Obtain from ZLIB_VERSION in zlib.h.in; https://github.com/zlib-ng/zlib-ng/blob/VERSION/zlib.h.in#L61
 {% set zlib_api = "1.3.1" %}
-{% set number = 0 %}
+{% set number = 1 %}
 
 package:
   name: zlib-ng
@@ -60,6 +60,8 @@ outputs:
         - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
         - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
         - if not exist %LIBRARY_BIN%\zlib1.dll exit 1               # [win]
+        - if not exist %LIBRARY_BIN%\zlib.dll exit 1                # [win]
+        - if not exist %PREFIX%\zlib.dll exit 1                     # [win]
         - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
         - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
   - name: zlib

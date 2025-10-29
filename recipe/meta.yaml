@@ -36,6 +36,14 @@ outputs:
         # but they seem to want to be backward compatible
         # https://abi-laboratory.pro/index.php?view=timeline&l=zlib-ng
         - {{ pin_subpackage('zlib-ng', max_pin='x.x') }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ stdlib('c') }}
+        - cmake
+        - make  # [unix]
+      host:
   # zlib and libzlib get built when compat is enabled; they are versioned after the zlib API
   - name: zlib
     version: {{ zlib_api }}
@@ -51,6 +59,14 @@ outputs:
         - {{ pin_subpackage('zlib', max_pin='x') }}
       track_features:
         - zlib-ng-compat
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ stdlib('c') }}
+        - cmake
+        - make  # [unix]
+      host:
   - name: libzlib
     version: {{ zlib_api }}
     build:

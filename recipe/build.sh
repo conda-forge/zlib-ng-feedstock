@@ -5,7 +5,9 @@ cd build
 
 cmake \
     ${CMAKE_ARGS} \
+    -DCMAKE_INSTALL_PREFIX:PATH="$PREFIX" \
     -DBUILD_SHARED_LIBS=1 \
+    -DZLIB_COMPAT=$COMPAT \
     ..
 
 make -j${CPU_COUNT}

@@ -12,7 +12,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DWITH_GTEST=OFF ^
       -DBUILD_SHARED_LIBS=1 ^
-      -DZLIB_COMPAT=%COMPAT% ^
+      -DZLIB_COMPAT=%ZLIB_COMPAT% ^
       ..
 
 if errorlevel 1 exit 1

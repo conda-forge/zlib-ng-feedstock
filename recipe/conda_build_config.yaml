@@ -1,5 +1,5 @@
 channel_targets:
 - jaimergp zlib-ng-compat
 compat:
-- "1"
-- "0"
+- "yes"
+- "no"

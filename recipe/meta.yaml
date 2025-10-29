@@ -1,7 +1,7 @@
 {% set version = "2.3.2" %}
 
 package:
-  name: zlib-ng
+  name: zlib
   version: {{ version }}
 
 source:
@@ -10,12 +10,13 @@ source:
   fn: zstd-ng.tar.gz
 
 build:
+  string: {{ PKG_HASH }}_ng_{{ BUILD_NUMBER }}
   number: 0
   run_exports:
     # Just guessing since th library is so new
     # but they seem to want to be backward compatible
     # https://abi-laboratory.pro/index.php?view=timeline&l=zlib-ng
-    - {{ pin_subpackage('zlib-ng', max_pin='x.x') }}
+    - {{ pin_subpackage('zlib', max_pin='x') }}
 
 requirements:
   build:
@@ -25,6 +26,13 @@ requirements:
     - cmake
     - make  # [unix]
   host:
+
+outputs:
+  - name: zlib
+  - name: libzlib  # just a shim for now
+    requirements:
+      run:
+        - {{ pin_subpackage("zlib", exact=True) }}
 
 test:
   commands:

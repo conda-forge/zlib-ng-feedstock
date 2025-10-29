@@ -10,7 +10,7 @@ source:
   fn: zstd-ng.tar.gz
 
 build:
-  string: {{ PKG_HASH }}_ng_{{ BUILD_NUMBER }}
+  string: h{{ PKG_HASH }}_ng_{{ PKG_BUILDNUM }}
   number: 0
   run_exports:
     # Just guessing since th library is so new

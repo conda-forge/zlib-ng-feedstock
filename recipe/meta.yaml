@@ -4,12 +4,24 @@
 {% set number = 0 %}
 
 package:
-  name: zlib-ng-split
+  name: zlib-ng
+  version: {{ version }}
 
 source:
   url: https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/{{ version }}
   sha256: 6a0561b50b8f5f6434a6a9e667a67026f2b2064a1ffa959c6b2dae320161c2a8
   fn: zstd-ng.tar.gz
+
+build:
+  number: {{ number }}
+  script_env:
+    - ZLIB_COMPAT=0  # [compat == "no"]
+    - ZLIB_COMPAT=1  # [compat == "yes"]
+  run_exports:
+    # Just guessing since the library is so new
+    # but they seem to want to be backward compatible
+    # https://abi-laboratory.pro/index.php?view=timeline&l=zlib-ng
+    - {{ pin_subpackage('zlib-ng', max_pin='x.x') }} # [compat == "no"]
 
 requirements:
   build:
@@ -23,67 +35,50 @@ requirements:
 outputs:
   # zlib-ng gets built when compat is NOT enabled; versioned with the regular zlib-ng release
   - name: zlib-ng
-    version: {{ version }}
-    script: build_zlib-ng.sh   # [unix]
-    script: build_zlib-ng.bat  # [win]
     build:
       skip: true  # [compat == "yes"]
-      number: {{ number }}
-      script_env:
-        - ZLIB_COMPAT=0
-      run_exports:
-        # Just guessing since the library is so new
-        # but they seem to want to be backward compatible
-        # https://abi-laboratory.pro/index.php?view=timeline&l=zlib-ng
-        - {{ pin_subpackage('zlib-ng', max_pin='x.x') }}
-    requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ stdlib('c') }}
-        - cmake
-        - make  # [unix]
-      host:
   # zlib and libzlib get built when compat is enabled; they are versioned after the zlib API
+  - name: libzlib
+    version: {{ zlib_api }}
+    build:
+      skip: true  # [compat == "no"]
+      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}  # [compat == "yes"]
+      run_exports:
+        # This is for compat mode, just libzlib, with major pinning
+        - {{ pin_subpackage('libzlib', max_pin='x') }}  # [compat == "yes"]
+      track_features:  # [compat == "yes"]
+        - zlib-ng-compat  # [compat == "yes"]
+    files:
+      include:
+        - "**/*"
+    test:
+      commands:
+        - test -e $PREFIX/include/zlib.h                            # [unix]
+        - test -e $PREFIX/include/zconf.h                           # [unix]
+        - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
+        - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
+        - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
+        - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
+        - if not exist %LIBRARY_BIN%\zlib1.dll exit 1               # [win]
+        - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
+        - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
   - name: zlib
     version: {{ zlib_api }}
-    script: build_zlib-ng.sh   # [unix]
-    script: build_zlib-ng.bat  # [win]
     build:
       skip: true  # [compat == "no"]
       number: {{ number }}
       string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
-      script_env:
-        - ZLIB_COMPAT=1
       run_exports:
         - {{ pin_subpackage('zlib', max_pin='x') }}
       track_features:
         - zlib-ng-compat
     requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ stdlib('c') }}
-        - cmake
-        - make  # [unix]
-      host:
-  - name: libzlib
-    version: {{ zlib_api }}
-    build:
-      skip: true  # [compat == "no"]
-      number: {{ number }}
-      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
-      run_exports:
-        - {{ pin_subpackage('libzlib', max_pin='x') }}
-      track_features:
-        - zlib-ng-compat
-    requirements:
       run:
-        - {{ pin_subpackage("zlib", exact=True) }}
+        - {{ pin_subpackage("libzlib", exact=True) }}
 
 test:
   commands:
-  {%- if compat == "no" %}
+{%- if compat == "no" %}
     - test -e $PREFIX/include/zlib-ng.h                         # [unix]
     - test -e $PREFIX/include/zconf-ng.h                        # [unix]
     - test -e $PREFIX/lib/libz-ng${SHLIB_EXT}                   # [unix]
@@ -93,17 +88,7 @@ test:
     - if not exist %LIBRARY_BIN%\zlib-ng2.dll exit 1            # [win]
     - if not exist %LIBRARY_LIB%\zlib-ng.lib exit 1.            # [win]
     - if not exist %LIBRARY_LIB%\pkgconfig\zlib-ng.pc exit 1    # [win]
-  {%- else %}
-    - test -e $PREFIX/include/zlib.h                            # [unix]
-    - test -e $PREFIX/include/zconf.h                           # [unix]
-    - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
-    - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
-    - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
-    - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
-    - if not exist %LIBRARY_BIN%\zlib1.dll exit 1               # [win]
-    - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
-    - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
-  {%- endif %}
+{%- endif %}
 
 about:
   home: https://github.com/zlib-ng/zlib-ng

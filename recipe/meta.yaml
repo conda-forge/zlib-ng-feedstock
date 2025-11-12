@@ -10,7 +10,7 @@ source:
   fn: zstd-ng.tar.gz
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # Just guessing since th library is so new
     # but they seem to want to be backward compatible
@@ -40,6 +40,7 @@ test:
 
 about:
   home: https://github.com/zlib-ng/zlib-ng
+  dev_url: https://github.com/zlib-ng/zlib-ng
   license: Zlib
   license_family: Other
   license_file: LICENSE.md

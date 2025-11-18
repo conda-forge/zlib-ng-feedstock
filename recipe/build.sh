@@ -3,10 +3,16 @@ set -ex
 mkdir build
 cd build
 
+# when building zlib-ng, build the shared library only
+# when building zlib compat, build shared+static -- this is done via not
+# passing any BUILD_SHARED_LIBS value
+if [[ ${ZLIB_COMPAT} == 0 ]]; then
+	CMAKE_ARGS+=" -DBUILD_SHARED_LIBS=1"
+fi
+
 cmake \
     ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX:PATH="$PREFIX" \
-    -DBUILD_SHARED_LIBS=1 \
     -DZLIB_COMPAT=$ZLIB_COMPAT \
     ..
 

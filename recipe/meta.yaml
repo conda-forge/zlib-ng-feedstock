@@ -50,20 +50,19 @@ outputs:
         - zlib-ng-compat  # [compat == "yes"]
     files:
       include:
-        - "**/*"
+        - lib/libz.so.*          # [linux]
+        - lib/libz.*.dylib       # [osx]
+        - Library/bin/zlib.dll   # [win]
+        - Library/bin/zlib1.dll  # [win]
+        - zlib.dll               # [win]
     test:
       commands:
-        - test -e $PREFIX/include/zlib.h                            # [unix]
-        - test -e $PREFIX/include/zconf.h                           # [unix]
-        - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
-        - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
-        - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
-        - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
-        - if not exist %LIBRARY_BIN%\zlib1.dll exit 1               # [win]
+        - test ! -e $PREFIX/include/zlib.h                          # [unix]
+        - test ! -e $PREFIX/lib/libz.a                              # [unix]
+        - test ! -e $PREFIX/lib/libz${SHLIB_EXT}                    # [unix]
         - if not exist %LIBRARY_BIN%\zlib.dll exit 1                # [win]
         - if not exist %PREFIX%\zlib.dll exit 1                     # [win]
-        - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
-        - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
+        - if not exist %LIBRARY_BIN%\zlib1.dll exit 1               # [win]
   - name: zlib
     version: {{ zlib_api }}
     build:
@@ -74,9 +73,30 @@ outputs:
         - {{ pin_subpackage('zlib', max_pin='x') }}
       track_features:
         - zlib-ng-compat
+    files:
+      include:
+        - "**/*"
+      exclude:
+        - lib/libz.so.*          # [linux]
+        - lib/libz.*.dylib       # [osx]
+        - Library/bin/zlib.dll   # [win]
+        - Library/bin/zlib1.dll  # [win]
+        - zlib.dll               # [win]
     requirements:
       run:
         - {{ pin_subpackage("libzlib", exact=True) }}
+    test:
+      commands:
+        - test -e $PREFIX/include/zlib.h                            # [unix]
+        - test -e $PREFIX/include/zconf.h                           # [unix]
+        - test -e $PREFIX/lib/libz.a                                # [unix]
+        - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
+        - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
+        - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
+        - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
+        - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
+        - if not exist %LIBRARY_LIB%\zlibstatic.lib exit 1          # [win]
+        - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
 
 test:
   commands:

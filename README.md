@@ -14,73 +14,6 @@ Current build status
 
 
 <table>
-    
-  <tr>
-    <td>Azure</td>
-    <td>
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-  </tr>
 </table>
 
 Current release info
@@ -88,95 +21,58 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-zlib--ng-green.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libzlib-green.svg)](https://anaconda.org/jaimergp/libzlib) | [![Conda Downloads](https://img.shields.io/conda/dn/jaimergp/libzlib.svg)](https://anaconda.org/jaimergp/libzlib) | [![Conda Version](https://img.shields.io/conda/vn/jaimergp/libzlib.svg)](https://anaconda.org/jaimergp/libzlib) | [![Conda Platforms](https://img.shields.io/conda/pn/jaimergp/libzlib.svg)](https://anaconda.org/jaimergp/libzlib) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-zlib-green.svg)](https://anaconda.org/jaimergp/zlib) | [![Conda Downloads](https://img.shields.io/conda/dn/jaimergp/zlib.svg)](https://anaconda.org/jaimergp/zlib) | [![Conda Version](https://img.shields.io/conda/vn/jaimergp/zlib.svg)](https://anaconda.org/jaimergp/zlib) | [![Conda Platforms](https://img.shields.io/conda/pn/jaimergp/zlib.svg)](https://anaconda.org/jaimergp/zlib) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-zlib--ng-green.svg)](https://anaconda.org/jaimergp/zlib-ng) | [![Conda Downloads](https://img.shields.io/conda/dn/jaimergp/zlib-ng.svg)](https://anaconda.org/jaimergp/zlib-ng) | [![Conda Version](https://img.shields.io/conda/vn/jaimergp/zlib-ng.svg)](https://anaconda.org/jaimergp/zlib-ng) | [![Conda Platforms](https://img.shields.io/conda/pn/jaimergp/zlib-ng.svg)](https://anaconda.org/jaimergp/zlib-ng) |
 
 Installing zlib-ng
 ==================
 
-Installing `zlib-ng` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `zlib-ng` from the `jaimergp/label/zlib-ng-compat` channel can be achieved by adding `jaimergp/label/zlib-ng-compat` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels jaimergp/label/zlib-ng-compat
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `zlib-ng` can be installed with `conda`:
+Once the `jaimergp/label/zlib-ng-compat` channel has been enabled, `libzlib, zlib, zlib-ng` can be installed with `conda`:
 
 ```
-conda install zlib-ng
-```
-
-or with `mamba`:
-
-```
-mamba install zlib-ng
-```
-
-It is possible to list all of the versions of `zlib-ng` available on your platform with `conda`:
-
-```
-conda search zlib-ng --channel conda-forge
+conda install libzlib zlib zlib-ng
 ```
 
 or with `mamba`:
 
 ```
-mamba search zlib-ng --channel conda-forge
+mamba install libzlib zlib zlib-ng
+```
+
+It is possible to list all of the versions of `libzlib` available on your platform with `conda`:
+
+```
+conda search libzlib --channel jaimergp/label/zlib-ng-compat
+```
+
+or with `mamba`:
+
+```
+mamba search libzlib --channel jaimergp/label/zlib-ng-compat
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search zlib-ng --channel conda-forge
+mamba repoquery search libzlib --channel jaimergp/label/zlib-ng-compat
 
-# List packages depending on `zlib-ng`:
-mamba repoquery whoneeds zlib-ng --channel conda-forge
+# List packages depending on `libzlib`:
+mamba repoquery whoneeds libzlib --channel jaimergp/label/zlib-ng-compat
 
-# List dependencies of `zlib-ng`:
-mamba repoquery depends zlib-ng --channel conda-forge
+# List dependencies of `libzlib`:
+mamba repoquery depends libzlib --channel jaimergp/label/zlib-ng-compat
 ```
 
 
-About conda-forge
-=================
-
-[![Powered by
-NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
-
-conda-forge is a community-led conda channel of installable packages.
-In order to provide high-quality builds, the process has been automated into the
-conda-forge GitHub organization. The conda-forge organization contains one repository
-for each of the installable packages. Such a repository is known as a *feedstock*.
-
-A feedstock is made up of a conda recipe (the instructions on what and how to build
-the package) and the necessary configurations for automatic building using freely
-available continuous integration services. Thanks to the awesome service provided by
-[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
-[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
-it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
-channel for Linux, Windows and OSX respectively.
-
-To manage the continuous integration and simplify feedstock maintenance,
-[conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
-Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
-this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
-
-For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
-
-Terminology
-===========
-
-**feedstock** - the conda recipe (raw material), supporting scripts and CI configuration.
-
-**conda-smithy** - the tool which helps orchestrate the feedstock.
-                   Its primary use is in the construction of the CI ``.yml`` files
-                   and simplify the management of *many* feedstocks.
-
-**conda-forge** - the place where the feedstock and smithy live and work to
-                  produce the finished article (built conda distributions)
 
 
 Updating zlib-ng-feedstock
@@ -187,8 +83,8 @@ package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
-`conda-forge` channel, whereupon the built conda packages will be available for
-everybody to install and use from the `conda-forge` channel.
+`jaimergp` channel, whereupon the built conda packages will be available for
+everybody to install and use from the `jaimergp` channel.
 Note that all branches in the conda-forge/zlib-ng-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to

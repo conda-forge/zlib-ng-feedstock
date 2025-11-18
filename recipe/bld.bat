@@ -5,13 +5,19 @@ if errorlevel 1 exit 1
 cd build
 if errorlevel 1 exit 1
 
+:: when building zlib-ng, build the shared library only
+:: when building zlib compat, build shared+static -- this is done via not
+:: passing any BUILD_SHARED_LIBS value
+if %ZLIB_COMPAT%==0 (
+      set CMAKE_ARGS=%CMAKE_ARGS% -DBUILD_SHARED_LIBS=1
+)
+
 cmake -G "NMake Makefiles" ^
       %CMAKE_ARGS% ^
       -DCMAKE_BUILD_TYPE:STRING="Release" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DWITH_GTEST=OFF ^
-      -DBUILD_SHARED_LIBS=1 ^
       -DZLIB_COMPAT=%ZLIB_COMPAT% ^
       ..
 

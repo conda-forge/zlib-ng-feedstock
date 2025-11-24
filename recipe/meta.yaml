@@ -98,6 +98,7 @@ outputs:
 
 test:
   commands:
+    # compat builds a standalone z library that does not depend on zlib-ng
 {%- if compat == "no" %}
     - test -e $PREFIX/include/zlib-ng.h                         # [unix]
     - test -e $PREFIX/include/zconf-ng.h                        # [unix]

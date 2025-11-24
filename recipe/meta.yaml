@@ -42,12 +42,12 @@ outputs:
     version: {{ zlib_api }}
     build:
       skip: true  # [compat == "no"]
-      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}  # [compat == "yes"]
+      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
       run_exports:
         # This is for compat mode, just libzlib, with major pinning
-        - {{ pin_subpackage('libzlib', max_pin='x') }}  # [compat == "yes"]
-      track_features:  # [compat == "yes"]
-        - zlib-ng-compat  # [compat == "yes"]
+        - {{ pin_subpackage('libzlib', max_pin='x') }}
+      track_features:
+        - zlib-ng-compat
     files:
       include:
         - lib/libz.so.*          # [linux]

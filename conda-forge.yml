@@ -1,3 +1,6 @@
+build_platform:
+  osx_arm64: osx_64
+  win_arm64: win_64
 conda_forge_output_validation: true
 github:
   branch_name: main
@@ -5,11 +8,8 @@ github:
 github_actions: 
   store_build_artifacts: true
 provider:
-  linux_64: github_actions
-  linux_aarch64: github_actions
-  osx_64: github_actions
-  osx_arm64: github_actions
-  win_64: github_actions
+  linux_aarch64: azure
+  linux_ppc64le: azure
 conda_build:
   pkg_format: '2'
 test: native_and_emulated

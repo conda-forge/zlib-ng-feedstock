@@ -121,3 +121,4 @@ extra:
   feedstock-name: zlib-ng
   recipe-maintainers:
     - hmaarrfk
+    - mgorny

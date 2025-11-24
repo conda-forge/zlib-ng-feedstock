@@ -13,7 +13,7 @@ c_stdlib_version:
 channel_sources:
 - conda-forge
 channel_targets:
-- jaimergp zlib-ng-compat
+- conda-forge main
 compat:
 - 'no'
 cxx_compiler:

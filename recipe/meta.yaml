@@ -92,6 +92,7 @@ outputs:
         - test -e $PREFIX/lib/libz.a                                # [unix]
         - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
         - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
+        - grep "ZLIB_VERSION.*{{ zlib_api }}\.zlib-ng" $PREFIX/include/zlib.h  # [unix]
         - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
         - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
         - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]

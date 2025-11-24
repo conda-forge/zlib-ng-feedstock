@@ -67,7 +67,7 @@ outputs:
       number: {{ number }}
       string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
       run_exports:
-        - {{ pin_subpackage('zlib', max_pin='x') }}
+        - {{ pin_subpackage('libzlib', max_pin='x') }}
       track_features:
         - zlib-ng-compat
     files:

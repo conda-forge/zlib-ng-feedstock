@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/{{ version }}
+  url: https://github.com/zlib-ng/zlib-ng/archive/refs/tags/{{ version }}.tar.gz
   sha256: 6a0561b50b8f5f6434a6a9e667a67026f2b2064a1ffa959c6b2dae320161c2a8
 
 build:

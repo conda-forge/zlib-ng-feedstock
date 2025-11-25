@@ -1,7 +1,10 @@
 {% set version = "2.2.5" %}
+{% set number = 1 %}
+
+# For zlib-ng-compat:
 # Obtain from ZLIB_VERSION in zlib.h.in; https://github.com/zlib-ng/zlib-ng/blob/VERSION/zlib.h.in#L61
 {% set zlib_api = "1.3.1" %}
-{% set number = 1 %}
+{% set compat_build = 100 %}
 
 package:
   name: zlib-ng
@@ -32,56 +35,26 @@ requirements:
   host:
 
 outputs:
-  # zlib-ng gets built when compat is NOT enabled; versioned with the regular zlib-ng release
+  # zlib-ng gets built when compat is NOT enabled
   - name: zlib-ng
     build:
       skip: true  # [compat == "yes"]
-  # zlib and libzlib get built when compat is enabled; they are versioned after the zlib API
   - name: libzlib
     version: {{ zlib_api }}
     build:
-      skip: true  # [compat == "no"]
-      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
-      run_exports:
-        # This is for compat mode, just libzlib, with major pinning
-        - {{ pin_subpackage('libzlib', max_pin='x') }}
-      track_features:
+      number: {{ compat_build }}
+      string: h{{ PKG_HASH }}_ng_{{ compat_build }}
+    requirements:
+      run:
         - zlib-ng-compat
-    files:
-      include:
-        - lib/libz.so.*          # [linux]
-        - lib/libz.*.dylib       # [osx]
-        - Library/bin/zlib.dll   # [win]
-        - zlib.dll               # [win]
-    test:
-      commands:
-        - test ! -e $PREFIX/include/zlib.h                          # [unix]
-        - test ! -e $PREFIX/lib/libz.a                              # [unix]
-        - test ! -e $PREFIX/lib/libz${SHLIB_EXT}                    # [unix]
-        - if not exist %LIBRARY_BIN%\zlib.dll exit 1                # [win]
-        - if not exist %PREFIX%\zlib.dll exit 1                     # [win]
   - name: zlib
     version: {{ zlib_api }}
     build:
-      skip: true  # [compat == "no"]
-      number: {{ number }}
-      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
-      run_exports:
-        - {{ pin_subpackage('libzlib', max_pin='x') }}
-      track_features:
-        - zlib-ng-compat
-    files:
-      include:
-        - "**/*"
-      exclude:
-        - lib/libz.so.*          # [linux]
-        - lib/libz.*.dylib       # [osx]
-        - Library/bin/zlib.dll   # [win]
-        - Library/bin/zlib1.dll  # [win]
-        - zlib.dll               # [win]
+      number: {{ compat_build }}
+      string: h{{ PKG_HASH }}_ng_{{ compat_build }}
     requirements:
       run:
-        - {{ pin_subpackage("libzlib", exact=True) }}
+        - {{ pin_subpackage('libzlib', exact=True) }}
     test:
       commands:
         - test -e $PREFIX/include/zlib.h                            # [unix]
@@ -90,11 +63,26 @@ outputs:
         - test -e $PREFIX/lib/libz${SHLIB_EXT}                      # [unix]
         - test -e $PREFIX/lib/pkgconfig/zlib.pc                     # [unix]
         - grep "ZLIB_VERSION.*{{ zlib_api }}\.zlib-ng" $PREFIX/include/zlib.h  # [unix]
+        - if not exist %LIBRARY_BIN%\zlib.dll exit 1                # [win]
+        - if not exist %PREFIX%\zlib.dll exit 1                     # [win]
+        - if exist %PREFIX%\zlib1.dll exit 1                        # [win]
         - if not exist %LIBRARY_INC%\zlib.h exit 1                  # [win]
         - if not exist %LIBRARY_INC%\zconf.h exit 1                 # [win]
         - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
         - if not exist %LIBRARY_LIB%\zlibstatic.lib exit 1          # [win]
         - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
+  # zlib-ng-compat gets built when compat is enabled
+  - name: zlib-ng-compat
+    build:
+      skip: true  # [compat == "no"]
+    requirements:
+      run_constraints:
+        - zlib {{ zlib_api }} *_ng*
+    files:
+      include:
+        - "**/*"
+      exclude:
+        - Library/bin/zlib1.dll  # [win]
 
 test:
   commands:

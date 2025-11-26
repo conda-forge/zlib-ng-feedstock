@@ -9,6 +9,8 @@ Package license: Zlib
 
 Summary: zlib data compression library for the next generation systems
 
+Development: https://github.com/zlib-ng/zlib-ng
+
 Current build status
 ====================
 

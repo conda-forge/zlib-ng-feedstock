@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  version: "2.3.1"
+
+package:
+  name: zlib-ng
+  version: ${{ version }}
+
+source:
+  url: https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/${{ version }}
+  sha256: 94cfa0a53a8265c813c8369d3963bf09ac6a357824ad1f93aee13486176e152e
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - cmake
+    - if: unix
+      then: make
+  run_exports:
+    # Just guessing since the library is so new
+    # but they seem to want to be backward compatible
+    # https://abi-laboratory.pro/index.php?view=timeline&l=zlib-ng
+    - ${{ pin_subpackage('zlib-ng', upper_bound='x.x') }}
+
+tests:
+  - script:
+      - if: unix
+        then:
+          - test -e $PREFIX/include/zlib-ng.h
+          - test -e $PREFIX/include/zconf-ng.h
+          - test -e $PREFIX/lib/libz-ng${SHLIB_EXT}
+          - test -e $PREFIX/lib/pkgconfig/zlib-ng.pc
+        else:
+          - if not exist %LIBRARY_INC%\zlib-ng.h exit 1
+          - if not exist %LIBRARY_INC%\zconf-ng.h exit 1
+          - if not exist %LIBRARY_BIN%\zlib-ng2.dll exit 1
+          - if not exist %LIBRARY_LIB%\zlib-ng.lib exit 1.
+          - if not exist %LIBRARY_LIB%\pkgconfig\zlib-ng.pc exit 1
+
+about:
+  license: Zlib
+  license_file: LICENSE.md
+  summary: zlib data compression library for the next generation systems
+  homepage: https://github.com/zlib-ng/zlib-ng
+  repository: https://github.com/zlib-ng/zlib-ng
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk
+    - mgorny

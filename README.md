@@ -29,52 +29,101 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_compatno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_compatno" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_64_compatyes</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_compatyes" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
+              <td>linux_aarch64_compatno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_compatno" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_aarch64_compatyes</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_compatyes" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64</td>
+              <td>linux_ppc64le_compatno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_compatno" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>linux_ppc64le_compatyes</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_compatyes" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_arm64</td>
+              <td>osx_64_compatno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_compatno" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_compatyes</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_compatyes" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_compatno</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_compatno" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_compatyes</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_compatyes" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_compatno</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_compatno" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_compatyes</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_compatyes" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_arm64_compatno</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_compatno" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_arm64_compatyes</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_compatyes" alt="variant">
                 </a>
               </td>
             </tr>
@@ -90,53 +139,55 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libzlib-green.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-zlib-green.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-zlib--ng-green.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) |
 
 Installing zlib-ng
 ==================
 
-Installing `zlib-ng` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `zlib-ng` from the `conda-forge/label/compat-test` channel can be achieved by adding `conda-forge/label/compat-test` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/compat-test
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `zlib-ng` can be installed with `conda`:
+Once the `conda-forge/label/compat-test` channel has been enabled, `libzlib, zlib, zlib-ng` can be installed with `conda`:
 
 ```
-conda install zlib-ng
-```
-
-or with `mamba`:
-
-```
-mamba install zlib-ng
-```
-
-It is possible to list all of the versions of `zlib-ng` available on your platform with `conda`:
-
-```
-conda search zlib-ng --channel conda-forge
+conda install libzlib zlib zlib-ng
 ```
 
 or with `mamba`:
 
 ```
-mamba search zlib-ng --channel conda-forge
+mamba install libzlib zlib zlib-ng
+```
+
+It is possible to list all of the versions of `libzlib` available on your platform with `conda`:
+
+```
+conda search libzlib --channel conda-forge/label/compat-test
+```
+
+or with `mamba`:
+
+```
+mamba search libzlib --channel conda-forge/label/compat-test
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search zlib-ng --channel conda-forge
+mamba repoquery search libzlib --channel conda-forge/label/compat-test
 
-# List packages depending on `zlib-ng`:
-mamba repoquery whoneeds zlib-ng --channel conda-forge
+# List packages depending on `libzlib`:
+mamba repoquery whoneeds libzlib --channel conda-forge/label/compat-test
 
-# List dependencies of `zlib-ng`:
-mamba repoquery depends zlib-ng --channel conda-forge
+# List dependencies of `libzlib`:
+mamba repoquery depends libzlib --channel conda-forge/label/compat-test
 ```
 
 

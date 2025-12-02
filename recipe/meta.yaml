@@ -29,6 +29,7 @@ requirements:
     - {{ stdlib('c') }}
     - cmake
     - make  # [unix]
+    - gtest  # [compat == "yes"]
   host:
 
 outputs:

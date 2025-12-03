@@ -23,11 +23,11 @@ cmake -G "NMake Makefiles" ^
 
 if errorlevel 1 exit 1
 
-cmake --build . --config Release
+cmake --build . --config Release -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
 if not "%CONDA_BUILD_SKIP_TESTS%"=="1" (
-ctest -C release
+ctest -C release -j%CPU_COUNT%
 )
 if errorlevel 1 exit 1
 

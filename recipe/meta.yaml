@@ -32,7 +32,6 @@ requirements:
     - cmake
     - make  # [unix]
     - gtest  # [compat == "yes"]
-  host:
 
 test:
   commands:

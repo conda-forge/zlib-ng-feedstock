@@ -1,6 +1,8 @@
 {% set version = "2.3.2" %}
 # Obtain from ZLIB_VERSION in zlib.h.in; https://github.com/zlib-ng/zlib-ng/blob/VERSION/zlib.h.in#L61
 {% set zlib_api = "1.3.1" %}
+# Please do not reset the build number unless zlib_api changed. It needs to be incremental across
+# both package versions.
 {% set number = 1 %}
 
 package:

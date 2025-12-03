@@ -142,6 +142,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libzlib-green.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libzlib.svg)](https://anaconda.org/conda-forge/libzlib) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-zlib-green.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib.svg)](https://anaconda.org/conda-forge/zlib) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-zlib--ng-green.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib-ng.svg)](https://anaconda.org/conda-forge/zlib-ng) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-zlib--ng--compat-green.svg)](https://anaconda.org/conda-forge/zlib-ng-compat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zlib-ng-compat.svg)](https://anaconda.org/conda-forge/zlib-ng-compat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zlib-ng-compat.svg)](https://anaconda.org/conda-forge/zlib-ng-compat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zlib-ng-compat.svg)](https://anaconda.org/conda-forge/zlib-ng-compat) |
 
 Installing zlib-ng
 ==================
@@ -153,16 +154,16 @@ conda config --add channels conda-forge/label/compat-test
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/compat-test` channel has been enabled, `libzlib, zlib, zlib-ng` can be installed with `conda`:
+Once the `conda-forge/label/compat-test` channel has been enabled, `libzlib, zlib, zlib-ng, zlib-ng-compat` can be installed with `conda`:
 
 ```
-conda install libzlib zlib zlib-ng
+conda install libzlib zlib zlib-ng zlib-ng-compat
 ```
 
 or with `mamba`:
 
 ```
-mamba install libzlib zlib zlib-ng
+mamba install libzlib zlib zlib-ng zlib-ng-compat
 ```
 
 It is possible to list all of the versions of `libzlib` available on your platform with `conda`:

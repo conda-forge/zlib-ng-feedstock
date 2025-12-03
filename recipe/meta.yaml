@@ -98,6 +98,15 @@ outputs:
         - if not exist %LIBRARY_LIB%\zlib.lib exit 1                # [win]
         - if not exist %LIBRARY_LIB%\zlibstatic.lib exit 1          # [win]
         - if not exist %LIBRARY_LIB%\pkgconfig\zlib.pc exit 1       # [win]
+  - name: zlib-ng-compat
+    build:
+      skip: true  # [compat == "no"]
+      number: {{ number }}
+      run_exports:
+        - {{ pin_subpackage('zlib', exact=True) }}
+    requirements:
+      run:
+        - {{ pin_subpackage('zlib', exact=True) }}
 
 test:
   commands:

@@ -68,6 +68,9 @@ outputs:
         - lib/libz.*.dylib       # [osx]
         - Library/bin/zlib.dll   # [win]
         - zlib.dll               # [win]
+    requirements:
+      run:
+        - {{ pin_subpackage('zlib-ng-compat', exact=True) }}
     test:
       commands:
         - test ! -e $PREFIX/include/zlib.h                          # [unix]

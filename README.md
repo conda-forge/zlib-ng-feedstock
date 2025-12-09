@@ -147,14 +147,14 @@ Current release info
 Installing zlib-ng
 ==================
 
-Installing `zlib-ng` from the `conda-forge/label/compat-test` channel can be achieved by adding `conda-forge/label/compat-test` to your channels with:
+Installing `zlib-ng` from the `conda-forge/label/zlib-ng-compat-test` channel can be achieved by adding `conda-forge/label/zlib-ng-compat-test` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/compat-test
+conda config --add channels conda-forge/label/zlib-ng-compat-test
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/compat-test` channel has been enabled, `libzlib, zlib, zlib-ng, zlib-ng-compat` can be installed with `conda`:
+Once the `conda-forge/label/zlib-ng-compat-test` channel has been enabled, `libzlib, zlib, zlib-ng, zlib-ng-compat` can be installed with `conda`:
 
 ```
 conda install libzlib zlib zlib-ng zlib-ng-compat
@@ -169,26 +169,26 @@ mamba install libzlib zlib zlib-ng zlib-ng-compat
 It is possible to list all of the versions of `libzlib` available on your platform with `conda`:
 
 ```
-conda search libzlib --channel conda-forge/label/compat-test
+conda search libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 or with `mamba`:
 
 ```
-mamba search libzlib --channel conda-forge/label/compat-test
+mamba search libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libzlib --channel conda-forge/label/compat-test
+mamba repoquery search libzlib --channel conda-forge/label/zlib-ng-compat-test
 
 # List packages depending on `libzlib`:
-mamba repoquery whoneeds libzlib --channel conda-forge/label/compat-test
+mamba repoquery whoneeds libzlib --channel conda-forge/label/zlib-ng-compat-test
 
 # List dependencies of `libzlib`:
-mamba repoquery depends libzlib --channel conda-forge/label/compat-test
+mamba repoquery depends libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 

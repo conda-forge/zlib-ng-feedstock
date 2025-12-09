@@ -8,11 +8,17 @@ jobs:
     vmImage: macOS-15
   strategy:
     matrix:
-      osx_64_:
-        CONFIG: osx_64_
+      osx_64_compatno:
+        CONFIG: osx_64_compatno
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_:
-        CONFIG: osx_arm64_
+      osx_64_compatyes:
+        CONFIG: osx_64_compatyes
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_compatno:
+        CONFIG: osx_arm64_compatno
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_compatyes:
+        CONFIG: osx_arm64_compatyes
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}

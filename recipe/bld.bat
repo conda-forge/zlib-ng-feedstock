@@ -4,6 +4,9 @@ setlocal EnableDelayedExpansion
 echo if( DEFINED ZLIB_SUFFIX ) >> "CMakeLists.txt"
 echo     set_target_properties(zlib-ng PROPERTIES SUFFIX ${ZLIB_SUFFIX}) >> "CMakeLists.txt"
 echo endif() >> "CMakeLists.txt"
+echo if( DEFINED ZLIB_OUTPUT_NAME ) >> "CMakeLists.txt"
+echo     set_target_properties(zlib-ng PROPERTIES OUTPUT_NAME ${ZLIB_OUTPUT_NAME}) >> "CMakeLists.txt"
+echo endif() >> "CMakeLists.txt"
 
 mkdir build
 if errorlevel 1 exit 1
@@ -50,4 +53,26 @@ if %ZLIB_COMPAT%==1 (
 
       :: python>=3.10 depend on this being at %PREFIX%
       copy %LIBRARY_BIN%\zlib.dll %PREFIX%\zlib.dll || exit 1
+)
+if errorlevel 1 exit 1
+
+:: Build zlibwapi.dll
+if %ZLIB_COMPAT%==1 (
+    mkdir ..\build-wapi || exit 1
+    cd ..\build-wapi || exit 1
+
+    cmake -G "NMake Makefiles" ^
+          %CMAKE_ARGS% ^
+          -DCMAKE_BUILD_TYPE:STRING="Release" ^
+          -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
+          -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
+          -DWITH_GTEST=OFF ^
+          -DZLIB_COMPAT=%ZLIB_COMPAT% ^
+          -DZLIB_OUTPUT_NAME="zlibwapi" ^
+          -DCMAKE_C_FLAGS="-DZLIB_WINAPI " ^
+          .. || exit 1
+
+    cmake --build . --config Release -j%CPU_COUNT% || exit 1
+    copy "zlibwapi.dll" "%LIBRARY_BIN%\zlibwapi.dll" || exit 1
+    copy "zlibwapi.lib" "%LIBRARY_LIB%\zlibwapi.lib" || exit 1
 )

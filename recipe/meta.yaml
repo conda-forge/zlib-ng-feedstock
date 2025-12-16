@@ -118,6 +118,47 @@ outputs:
     build:
       skip: true  # [compat == "no"]
       number: {{ number }}
+  # *-wapi targets are built on Windows with compat enabled
+  - name: libzlib-wapi
+    version: {{ zlib_api }}
+    build:
+      skip: true  # [compat == "no" or not win]
+      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
+      run_exports:
+        # This is for compat mode, just libzlib, with major pinning
+        - {{ pin_subpackage('libzlib-wapi', max_pin='x') }}
+      track_features:
+        - zlib-ng-compat
+    files:
+      include:
+        - Library/bin/zlibwapi.dll
+    requirements:
+      run:
+        - {{ pin_subpackage('zlib-ng-compat', exact=True) }}
+    test:
+      commands:
+        - if not exist %LIBRARY_BIN%\zlibwapi.dll exit 1
+  - name: zlib-wapi
+    version: {{ zlib_api }}
+    build:
+      skip: true  # [compat == "no" or not win]
+      number: {{ number }}
+      string: h{{ PKG_HASH }}_ng_{{ version.replace(".", "") }}_{{ number }}
+      run_exports:
+        - {{ pin_subpackage('libzlib-wapi', max_pin='x') }}
+      track_features:
+        - zlib-ng-compat
+    files:
+      include:
+        - Library/lib/zlibwapi.lib
+        - Library/include/zlib.h
+    requirements:
+      run:
+        - {{ pin_subpackage("libzlib-wapi", exact=True) }}
+    test:
+      commands:
+        - if not exist %LIBRARY_INC%\zlib.h exit 1
+        - if not exist %LIBRARY_LIB%\zlibwapi.lib exit 1
 
 about:
   home: https://github.com/zlib-ng/zlib-ng

@@ -1,6 +1,10 @@
 @echo on
 setlocal EnableDelayedExpansion
 
+echo if( DEFINED ZLIB_SUFFIX ) >> "CMakeLists.txt"
+echo     set_target_properties(zlib-ng PROPERTIES SUFFIX ${ZLIB_SUFFIX}) >> "CMakeLists.txt"
+echo endif() >> "CMakeLists.txt"
+
 mkdir build
 if errorlevel 1 exit 1
 cd build
@@ -11,6 +15,8 @@ if errorlevel 1 exit 1
 :: passing any BUILD_SHARED_LIBS value
 if %ZLIB_COMPAT%==0 (
       set CMAKE_ARGS=%CMAKE_ARGS% -DBUILD_SHARED_LIBS=1
+) else (
+      set CMAKE_ARGS=%CMAKE_ARGS% -DZLIB_SUFFIX=".dll"
 )
 
 cmake -G "NMake Makefiles" ^
@@ -43,6 +49,5 @@ if %ZLIB_COMPAT%==1 (
       copy %LIBRARY_LIB%\zlib.lib %LIBRARY_LIB%\zdll.lib || exit 1
 
       :: python>=3.10 depend on this being at %PREFIX%
-      copy %LIBRARY_BIN%\zlib1.dll %LIBRARY_BIN%\zlib.dll || exit 1
-      copy %LIBRARY_BIN%\zlib1.dll %PREFIX%\zlib.dll || exit 1
+      copy %LIBRARY_BIN%\zlib.dll %PREFIX%\zlib.dll || exit 1
 )

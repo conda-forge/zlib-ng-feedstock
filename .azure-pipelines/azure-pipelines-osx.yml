@@ -8,17 +8,17 @@ jobs:
     vmImage: macOS-15
   strategy:
     matrix:
-      osx_64_compatno:
-        CONFIG: osx_64_compatno
+      osx_64_channel_targetsconda-forge_maincompatno:
+        CONFIG: osx_64_channel_targetsconda-forge_maincompatno
         UPLOAD_PACKAGES: 'True'
-      osx_64_compatyes:
-        CONFIG: osx_64_compatyes
+      osx_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes:
+        CONFIG: osx_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_compatno:
-        CONFIG: osx_arm64_compatno
+      osx_arm64_channel_targetsconda-forge_maincompatno:
+        CONFIG: osx_arm64_channel_targetsconda-forge_maincompatno
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_compatyes:
-        CONFIG: osx_arm64_compatyes
+      osx_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes:
+        CONFIG: osx_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}

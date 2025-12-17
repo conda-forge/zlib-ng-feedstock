@@ -7,10 +7,13 @@ channel_sources:
 channel_targets:
 - conda-forge zlib-ng-compat-test
 compat:
-- 'no'
+- 'yes'
 cxx_compiler:
 - vs2022
 target_platform:
 - win-64
+zip_keys:
+- - channel_targets
+  - compat
 zlib:
 - '1'

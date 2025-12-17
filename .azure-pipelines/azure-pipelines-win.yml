@@ -8,17 +8,17 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_compatno:
-        CONFIG: win_64_compatno
+      win_64_channel_targetsconda-forge_maincompatno:
+        CONFIG: win_64_channel_targetsconda-forge_maincompatno
         UPLOAD_PACKAGES: 'True'
-      win_64_compatyes:
-        CONFIG: win_64_compatyes
+      win_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes:
+        CONFIG: win_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes
         UPLOAD_PACKAGES: 'True'
-      win_arm64_compatno:
-        CONFIG: win_arm64_compatno
+      win_arm64_channel_targetsconda-forge_maincompatno:
+        CONFIG: win_arm64_channel_targetsconda-forge_maincompatno
         UPLOAD_PACKAGES: 'True'
-      win_arm64_compatyes:
-        CONFIG: win_arm64_compatyes
+      win_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes:
+        CONFIG: win_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:

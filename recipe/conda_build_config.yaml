@@ -1,0 +1,9 @@
+zip_keys:
+  - - channel_targets
+    - compat
+channel_targets:
+  - conda-forge zlib-ng-compat-test
+  - conda-forge main
+compat:
+- "yes"
+- "no"

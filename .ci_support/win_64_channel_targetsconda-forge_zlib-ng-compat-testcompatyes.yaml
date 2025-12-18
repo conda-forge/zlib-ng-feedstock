@@ -5,8 +5,15 @@ c_stdlib:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge zlib-ng-compat-test
+compat:
+- 'yes'
 cxx_compiler:
 - vs2022
 target_platform:
 - win-64
+zip_keys:
+- - channel_targets
+  - compat
+zlib:
+- '1'

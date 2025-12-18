@@ -9,7 +9,9 @@ c_stdlib_version:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge zlib-ng-compat-test
+compat:
+- 'yes'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -21,3 +23,7 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - channel_targets
+  - compat
+zlib:
+- '1'

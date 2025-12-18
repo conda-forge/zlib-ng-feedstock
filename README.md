@@ -261,5 +261,6 @@ Feedstock Maintainers
 =====================
 
 * [@hmaarrfk](https://github.com/hmaarrfk/)
+* [@isuruf](https://github.com/isuruf/)
 * [@mgorny](https://github.com/mgorny/)
 

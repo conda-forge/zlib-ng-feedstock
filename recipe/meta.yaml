@@ -6,7 +6,7 @@
 {% set number = 2 %}
 
 package:
-  name: zlib-ng-split
+  name: {{ 'zlib-ng' if compat == "no" else 'zlib-ng-split' }}
   version: {{ version }}
 
 source:

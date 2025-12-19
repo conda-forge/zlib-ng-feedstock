@@ -101,7 +101,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage("libzlib", exact=True) }}
-        - libzlib * *_ng_{{ version.replace(".", "") }}_{{ number }}
     test:
       commands:
         - test -e $PREFIX/include/zlib.h                            # [unix]
@@ -156,7 +155,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage("libzlib-wapi", exact=True) }}
-        - libzlib-wapi * *_ng_{{ version.replace(".", "") }}_{{ number }}
     test:
       commands:
         - if not exist %LIBRARY_INC%\zlib.h exit 1

@@ -6,7 +6,7 @@
 {% set number = 2 %}
 
 package:
-  name: zlib-ng
+  name: zlib-ng-split
   version: {{ version }}
 
 source:

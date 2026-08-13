@@ -15,7 +15,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/zlib-ng-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/zlib-ng-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -29,20 +36,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_channel_targetsconda-forge_maincompatno</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_targetsconda-forge_maincompatno" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_aarch64_channel_targetsconda-forge_maincompatno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
@@ -84,48 +77,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>osx_arm64_channel_targetsconda-forge_maincompatno</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_targetsconda-forge_maincompatno" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_channel_targetsconda-forge_maincompatno</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_channel_targetsconda-forge_maincompatno" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_arm64_channel_targetsconda-forge_maincompatno</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_channel_targetsconda-forge_maincompatno" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13957&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zlib-ng-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_channel_targetsconda-forge_zlib-ng-compat-testcompatyes" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -149,49 +100,93 @@ Current release info
 Installing zlib-ng
 ==================
 
-Installing `zlib-ng` from the `conda-forge/label/zlib-ng-compat-test` channel can be achieved by adding `conda-forge/label/zlib-ng-compat-test` to your channels with:
+Installing `zlib-ng` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/zlib-ng-compat-test
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/zlib-ng-compat-test` channel has been enabled, `libzlib, libzlib-wapi, zlib, zlib-ng, zlib-ng-compat, zlib-wapi` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install libzlib libzlib-wapi zlib zlib-ng zlib-ng-compat zlib-wapi
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install libzlib libzlib-wapi zlib zlib-ng zlib-ng-compat zlib-wapi
 ```
 
-It is possible to list all of the versions of `libzlib` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
 
 ```
-conda search libzlib --channel conda-forge/label/zlib-ng-compat-test
+# for adding to your local project
+pixi add libzlib libzlib-wapi zlib zlib-ng zlib-ng-compat zlib-wapi
+# for installing globally
+pixi global install libzlib libzlib-wapi zlib zlib-ng zlib-ng-compat zlib-wapi
 ```
 
-or with `mamba`:
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `libzlib` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
-mamba search libzlib --channel conda-forge/label/zlib-ng-compat-test
+conda search libzlib --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba search libzlib --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search libzlib --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libzlib --channel conda-forge/label/zlib-ng-compat-test
+mamba repoquery search libzlib --channel conda-forge
 
 # List packages depending on `libzlib`:
-mamba repoquery whoneeds libzlib --channel conda-forge/label/zlib-ng-compat-test
+mamba repoquery whoneeds libzlib --channel conda-forge
 
 # List dependencies of `libzlib`:
-mamba repoquery depends libzlib --channel conda-forge/label/zlib-ng-compat-test
+mamba repoquery depends libzlib --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge

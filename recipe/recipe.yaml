@@ -62,14 +62,13 @@ outputs:
           lib:
             - if: unix
               then: z-ng
-            - if: win
-              then: zlib-ng
           files:
             - if: unix
               then: lib/pkgconfig/zlib-ng.pc
             - if: win
               then:
                 - Library/bin/zlib-ng2.dll
+                - Library/lib/zlib-ng.lib
                 - Library/lib/pkgconfig/zlib-ng.pc
 
   # zlib and libzlib get built when compat is enabled; they are versioned after the zlib API.
@@ -149,12 +148,16 @@ outputs:
             - zlib.h
             - zconf.h
           lib:
-            - z
+            - if: unix
+              then: z
           files:
             - if: unix
               then: lib/pkgconfig/zlib.pc
             - if: win
-              then: Library/lib/pkgconfig/zlib.pc
+              then:
+                - Library/lib/zlib.lib
+                - Library/lib/zlibstatic.lib
+                - Library/lib/pkgconfig/zlib.pc
       - if: unix
         then:
           script:
@@ -214,8 +217,8 @@ outputs:
       - package_contents:
           include:
             - zlib.h
-          lib:
-            - zlibwapi
+          files:
+            - Library/lib/zlibwapi.lib
 
 about:
   homepage: https://github.com/zlib-ng/zlib-ng

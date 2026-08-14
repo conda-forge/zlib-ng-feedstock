@@ -15,5 +15,3 @@ target_platform:
 zip_keys:
 - - channel_targets
   - compat
-zlib:
-- '1'

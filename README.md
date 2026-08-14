@@ -100,10 +100,10 @@ Current release info
 Installing zlib-ng
 ==================
 
-Installing `zlib-ng` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `zlib-ng` from the `conda-forge/label/zlib-ng-compat-test` channel can be achieved by adding `conda-forge/label/zlib-ng-compat-test` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/zlib-ng-compat-test
 conda config --set channel_priority strict
 ```
 
@@ -149,7 +149,7 @@ It is possible to list all of the versions of `libzlib` available on your platfo
 <summary>With conda</summary>
 
 ```
-conda search libzlib --channel conda-forge
+conda search libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 </details>
@@ -158,7 +158,7 @@ conda search libzlib --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search libzlib --channel conda-forge
+mamba search libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 </details>
@@ -167,7 +167,7 @@ mamba search libzlib --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search libzlib --channel conda-forge
+pixi search libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 </details>
@@ -177,13 +177,13 @@ pixi search libzlib --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libzlib --channel conda-forge
+mamba repoquery search libzlib --channel conda-forge/label/zlib-ng-compat-test
 
 # List packages depending on `libzlib`:
-mamba repoquery whoneeds libzlib --channel conda-forge
+mamba repoquery whoneeds libzlib --channel conda-forge/label/zlib-ng-compat-test
 
 # List dependencies of `libzlib`:
-mamba repoquery depends libzlib --channel conda-forge
+mamba repoquery depends libzlib --channel conda-forge/label/zlib-ng-compat-test
 ```
 
 </details>
